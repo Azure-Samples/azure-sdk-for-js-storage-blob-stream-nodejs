@@ -1,57 +1,39 @@
-# Project Name
+# Azure Storage Blob Upload from a Node.js Web Application using the v10 SDK
 
-(short, 1-3 sentenced, description of the project)
+This sample demonstrates how to use the Azure Storage v10 SDK in the context of an [Express](https://expressjs.com/) application to upload images into Azure Blob Storage.
 
-## Features
+## Getting started
 
-This project framework provides the following features:
+Clone the repository to your machine:
 
-* Feature 1
-* Feature 2
-* ...
+```bash
+git clone https://github.com/Azure-Samples/storage-blob-upload-from-webapp-node-v10.git
+```
 
-## Getting Started
+Change into the `storage-blob-upload-from-webapp-node-v10` folder:
 
-### Prerequisites
+```bash
+cd storage-blob-upload-from-webapp-node-v10
+```
 
-(ideally very short, if any)
+Install dependencies via `npm`:
 
-- OS
-- Library version
-- ...
+```bash
+npm install
+```
 
-### Installation
+## Adding your storage account name and key
 
-(ideally very short)
+Navigate to your storage account in the [Azure Portal](https://portal.azure.com) and copy the account name and key (under **Settings** > **Access keys**) into the `.env.example` file. Save the file and then rename it from `.env.example` to `.env`.
 
-- npm install [package name]
-- mvn install
-- ...
+## Running the sample
 
-### Quickstart
-(Add steps to get up and running quickly)
+Start the server:
 
-1. git clone [repository clone url]
-2. cd [respository name]
-3. ...
+```bash
+npm start
+```
 
+Navigate to [http://localhost:3000](http://localhost:3000) and upload an image to blob storage.
 
-## Demo
-
-A demo app is included to show how to use the project.
-
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
-
-## Resources
-
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...
+You can use the [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) to view blob containers and verify your upload is successful.
