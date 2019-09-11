@@ -5,6 +5,7 @@ languages:
 - nodejs
 products:
 - azure-storage
+description: "This sample demonstrates how to use the Azure Storage v10 SDK in the context of an Express application to upload images into Azure Blob Storage."
 ---
 
 # Azure Storage Blob Upload from a Node.js Web Application using the v10 SDK
