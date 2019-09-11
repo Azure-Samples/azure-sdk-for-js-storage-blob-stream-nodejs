@@ -1,3 +1,12 @@
+---
+page_type: sample
+languages:
+- javascript
+- nodejs
+products:
+- azure-storage
+---
+
 # Azure Storage Blob Upload from a Node.js Web Application using the v10 SDK
 
 This sample demonstrates how to use the Azure Storage v10 SDK in the context of an [Express](https://expressjs.com/) application to upload images into Azure Blob Storage.
