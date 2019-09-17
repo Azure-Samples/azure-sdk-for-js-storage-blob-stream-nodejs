@@ -10,7 +10,7 @@ Clone the repository to your machine:
 git clone https://github.com/Azure-Samples/storage-blob-upload-from-webapp-node-v10.git
 ```
 
-Change into the `storage-blob-upload-from-webapp-node-v10` folder:
+Change into the `storage-blob-upload-from-webapp-node-v10-v4` folder:
 
 ```bash
 cd storage-blob-upload-from-webapp-node-v10-v4
