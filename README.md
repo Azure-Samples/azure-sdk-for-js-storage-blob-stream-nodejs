@@ -48,4 +48,4 @@ You can use the [Azure Storage Explorer](https://azure.microsoft.com/features/st
 
 ## Folders introduction
 
-You will find the following folders: storage-blob-upload-from-webapp-node--v10-v3, which references the [@azure/storage-blob](https://www.npmjs.com/package/@azure/storage-blob/v/10.3.0) version 10.3.0 of the SDK and storage-blob-upload-from-webapp-node-v10-v4, which uses the [@azure/storage-blob](https://www.npmjs.com/package/@azure/storage-blob/v/12.0.0) version 12.0.0 of the SDK.
+You will find the following folders: storage-blob-upload-from-webapp-node-v10-v3, which references the [@azure/storage-blob](https://www.npmjs.com/package/@azure/storage-blob/v/10.3.0) version 10.3.0 of the SDK and storage-blob-upload-from-webapp-node-v10-v4, which uses the [@azure/storage-blob](https://www.npmjs.com/package/@azure/storage-blob/v/12.0.0) version 12.0.0 of the SDK.
