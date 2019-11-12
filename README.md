@@ -26,7 +26,7 @@ npm install
 
 * Create a storage account.
 * Create a container.
-* Upload a stream to blockblob which consist of blocks of data assembled.
+* Upload a stream to [blockblob](https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs).
 
 If you don't have a Microsoft Azure subscription, you can get a free trial account <a href="http://go.microsoft.com/fwlink/?LinkId=330212">here</a>.
 
