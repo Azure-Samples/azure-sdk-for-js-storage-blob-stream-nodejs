@@ -2,6 +2,10 @@
 
 This sample demonstrates how to use the Azure Storage v10 SDK in the context of an [Express](https://expressjs.com/) application to upload images into Azure Blob Storage.
 
+## SDK Versions
+
+You will find the following folders: [storage-blob-upload-from-webapp-node-v10](./storage-blob-upload-from-webapp-node-v10), which references the [@azure/storage-blob version 10.3.0](https://www.npmjs.com/package/@azure/storage-blob/v/10.3.0) of the SDK and [storage-blob-upload-from-webapp-node-v12](./storage-blob-upload-from-webapp-node-v12), which uses the [@azure/storage-blob version 12.0.0](https://www.npmjs.com/package/@azure/storage-blob/v/12.0.0) of the SDK.
+
 ## Prerequisites
 
 Clone the repository to your machine:
@@ -46,6 +50,3 @@ Navigate to [http://localhost:3000](http://localhost:3000) and upload an image t
 
 You can use the [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) to view blob containers and verify your upload is successful.
 
-## Folders introduction
-
-You will find the following folders: storage-blob-upload-from-webapp-node-v10-v3, which references the [@azure/storage-blob](https://www.npmjs.com/package/@azure/storage-blob/v/10.3.0) version 10.3.0 of the SDK and storage-blob-upload-from-webapp-node-v10-v4, which uses the [@azure/storage-blob](https://www.npmjs.com/package/@azure/storage-blob/v/12.0.0) version 12.0.0 of the SDK.
