@@ -4,7 +4,7 @@ This sample demonstrates how to use the Azure Storage v10 SDK in the context of 
 
 ## SDK Versions
 
-You will find the following folders: [storage-blob-upload-from-webapp-node-v10-v3](./storage-blob-upload-from-webapp-node-v10-v3), which references the [@azure/storage-blob version 10.3.0](https://www.npmjs.com/package/@azure/storage-blob/v/10.3.0) of the SDK and [storage-blob-upload-from-webapp-node-v10-v4](./storage-blob-upload-from-webapp-node-v10-v4), which uses the [@azure/storage-blob version 12.0.0](https://www.npmjs.com/package/@azure/storage-blob/v/12.0.0) of the SDK.
+You will find the following folders: [storage-blob-upload-from-webapp-node-v10](./storage-blob-upload-from-webapp-node-v10), which references the [@azure/storage-blob version 10.3.0](https://www.npmjs.com/package/@azure/storage-blob/v/10.3.0) of the SDK and [storage-blob-upload-from-webapp-node-v12](./storage-blob-upload-from-webapp-node-v12), which uses the [@azure/storage-blob version 12.0.0](https://www.npmjs.com/package/@azure/storage-blob/v/12.0.0) of the SDK.
 
 ## Prerequisites
 
