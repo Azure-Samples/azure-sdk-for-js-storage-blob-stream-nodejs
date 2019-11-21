@@ -13,7 +13,7 @@ description: "This sample demonstrates how to use the Azure Storage v12 SDK in t
 
 This sample demonstrates how to use the Azure Storage v12 SDK in the context of an [Express](https://expressjs.com/) application to upload images into Azure Blob Storage.
 
-If you don't have a Microsoft Azure subscription, you can get a free trial account <a href="http://go.microsoft.com/fwlink/?LinkId=330212">here</a>.
+If you don't have a Microsoft Azure subscription, you can get a free account <a href="http://go.microsoft.com/fwlink/?LinkId=330212">here</a>.
 
 ## SDK Versions
 
