@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV !== 'production') {
-  require('../../azure-sdk-for-js-storage-blob-stream-nodejs-v10/routes/node_modules/dotenv').load();
+  require('dotenv').load();
 }
 
 const {
@@ -11,14 +11,14 @@ const {
   StorageURL,
   SharedKeyCredential,
   uploadStreamToBlockBlob
-} = require('../../azure-sdk-for-js-storage-blob-stream-nodejs-v12/routes/node_modules/@azure/storage-blob');
+} = require('@azure/storage-blob');
 
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const inMemoryStorage = multer.memoryStorage();
 const uploadStrategy = multer({ storage: inMemoryStorage }).single('image');
-const getStream = require('../../azure-sdk-for-js-storage-blob-stream-nodejs-v12/routes/node_modules/into-stream');
+const getStream = require('into-stream');
 const containerName = 'images';
 const ONE_MEGABYTE = 1024 * 1024;
 const uploadOptions = { bufferSize: 4 * ONE_MEGABYTE, maxBuffers: 20 };
