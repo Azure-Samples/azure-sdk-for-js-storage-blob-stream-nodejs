@@ -43,7 +43,7 @@ Install dependencies via `npm`:
 npm install
 ```
 
-## In this sample you will do the following:
+## This Sample shows how to do following operations of Storage Blobs
 
 * Create a storage account.
 * Create a container.
