@@ -6,7 +6,7 @@ languages:
 products:
 - azure
 - azure-storage
-description: "This sample demonstrates how to stream blobs to Azure Blob Storage with Node.js."
+description: "How to stream blobs to Azure Blob Storage with Node.js."
 urlFragment: stream-blobs-nodejs
 ---
 
