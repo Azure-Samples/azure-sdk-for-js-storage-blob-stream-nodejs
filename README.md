@@ -14,7 +14,7 @@ urlFragment: stream-blobs-nodejs
 
 This sample demonstrates how to stream blobs to Azure Blob Storage with Node.js.
 
-If you don't have a Microsoft Azure subscription, you can get a free account <a href="http://go.microsoft.com/fwlink/?LinkId=330212">here</a>.
+If you don't have a Microsoft Azure subscription, you can get a [free account] before you begin.
 
 ## SDK Versions
 
@@ -71,6 +71,7 @@ You can use the [Azure Storage Explorer] to view blob containers and verify your
 [Storage Blob SDK v10]: https://www.npmjs.com/package/@azure/storage-blob/v/10.3.0
 [Storage Blob SDK v12]: https://www.npmjs.com/package/@azure/storage-blob/v/12.0.0
 [blockblob]: https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs
-Azure Portal: https://portal.azure.com
-http://localhost:3000: http://localhost:3000
-Azure Storage Explorer: https://azure.microsoft.com/features/storage-explorer/
+[Azure Portal]: https://portal.azure.com
+[http://localhost:3000]: http://localhost:3000
+[Azure Storage Explorer]: https://azure.microsoft.com/features/storage-explorer/
+[free account]: http://go.microsoft.com/fwlink/?LinkId=330212
