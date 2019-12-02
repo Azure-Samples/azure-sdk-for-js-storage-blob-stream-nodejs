@@ -15,8 +15,8 @@ urlFragment: stream-blobs-nodejs
 ## SDK Versions
 In this sample, you will find the following folders:
 
-* **azure-sdk-for-js-storage-blob-stream-nodejs-v10** - references Storage Blob SDK v10
-* **azure-sdk-for-js-storage-blob-stream-nodejs-v12** - references Storage Blob SDK v12
+* **v10** - references Storage Blob SDK v10
+* **v12** - references Storage Blob SDK v12
 
 ## Prerequisites
 If you don't have a Microsoft Azure subscription, you can get a [free account] before you begin.
@@ -27,7 +27,7 @@ Clone the repository to your machine:
 git clone https://github.com/Azure-Samples/storage-blob-upload-from-webapp-node-v12.git
 ```
 
-Change into the `azure-sdk-for-js-storage-blob-stream-nodejs-v12` folder:
+Change into the `v12` folder:
 
 ```bash
 cd storage-blob-upload-from-webapp-node-v12
