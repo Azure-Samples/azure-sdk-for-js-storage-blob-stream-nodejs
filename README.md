@@ -24,7 +24,7 @@ If you don't have a Microsoft Azure subscription, you can get a [free account] b
 Clone the repository to your machine:
 
 ```bash
-git clone https://github.com/Azure-Samples/azure-sdk-for-js-storage-blob-stream-nodejs-v10.git
+git clone https://github.com/Azure-Samples/azure-sdk-for-js-storage-blob-stream-nodejs.git
 ```
 
 Then, switch to the appropriate folder:
