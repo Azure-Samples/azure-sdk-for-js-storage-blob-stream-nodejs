@@ -24,13 +24,19 @@ If you don't have a Microsoft Azure subscription, you can get a [free account] b
 Clone the repository to your machine:
 
 ```bash
-git clone https://github.com/Azure-Samples/storage-blob-upload-from-webapp-node-v12.git
+git clone https://github.com/Azure-Samples/azure-sdk-for-js-storage-blob-stream-nodejs-v10.git
 ```
 
-Change into the `v12` folder:
+Then, switch to the appropriate folder:
 
 ```bash
-cd storage-blob-upload-from-webapp-node-v12
+cd v10
+```
+
+or
+
+```bash
+cd v12
 ```
 
 Install dependencies via `npm`:
