@@ -70,3 +70,4 @@ You can use the [Azure Storage Explorer] to view blob containers and verify your
 [http://localhost:3000]: http://localhost:3000
 [Azure Storage Explorer]: https://azure.microsoft.com/features/storage-explorer/
 [free account]: http://go.microsoft.com/fwlink/?LinkId=330212
+
