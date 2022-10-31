@@ -1,0 +1,44 @@
+<h1>Nutrition Assistant</h1>
+<br>
+<h2>Upload Nutrition Label Image</h2>
+<form id="upload-form" action="/upload-label-image" method="POST" enctype="multipart/form-data">
+  <div class="upload-container"><input id="file-picker" type="file" name="image"></div>
+  <div><input type="submit" value="Upload Image"></div>
+</form>
+
+<p id="message">{{message}}</p>
+
+<br>
+<hr>
+<br>
+
+<h2>Upload Food Image</h2>
+<form id="upload-form" action="/upload-food-image" method="POST" enctype="multipart/form-data">
+  <div class="upload-container"><input id="file-picker" type="file" name="image"></div>
+  <div><input type="submit" value="Upload Image"></div>
+</form>
+
+<br>
+<hr>
+<br>
+<p>This app has no official privacy policy. Your data will be uploaded to Azure Blob Storage. Your images will be public once you upload them and there is no automated way to remove them.</p>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const message = document.getElementById('message');
+    const picker = document.getElementById('file-picker');
+
+    document.getElementById('upload-form').addEventListener('submit', (e) => {
+
+      message.innerText = '';
+
+      if(!picker.files.length) {
+        message.innerText = 'Please select an image to upload.';
+        e.preventDefault();
+        return false;
+      }
+    });
+
+  });
+</script>
