@@ -10,15 +10,12 @@ const {
 
 const express = require('express');
 const router = express.Router();
-const containerName1 = 'thumbnails';
 const multer = require('multer');
 const inMemoryStorage = multer.memoryStorage();
 const uploadStrategy = multer({ storage: inMemoryStorage }).single('image');
 const getStream = require('into-stream');
-const containerName2 = 'images';
 const ONE_MEGABYTE = 1024 * 1024;
 const uploadOptions = { bufferSize: 4 * ONE_MEGABYTE, maxBuffers: 20 };
-const ONE_MINUTE = 60 * 1000;
 
 const sharedKeyCredential = new StorageSharedKeyCredential(
   process.env.AZURE_STORAGE_ACCOUNT_NAME,
@@ -38,51 +35,42 @@ const getBlobName = originalName => {
 };
 
 router.get('/', async (req, res, next) => {
-
   let viewData;
-
-  try {
-    const containerClient = blobServiceClient.getContainerClient(containerName1);
-    const listBlobsResponse = await containerClient.listBlobFlatSegment();
-
-    for await (const blob of listBlobsResponse.segment.blobItems) {
-      console.log(`Blob: ${blob.name}`);
-    }
-
-    viewData = {
+  viewData = {
       title: 'Home',
       viewName: 'index',
-      accountName: process.env.AZURE_STORAGE_ACCOUNT_NAME,
-      containerName: containerName1
-    };
-
-    if (listBlobsResponse.segment.blobItems.length) {
-      viewData.thumbnails = listBlobsResponse.segment.blobItems;
-    }
-  } catch (err) {
-    viewData = {
-      title: 'Error',
-      viewName: 'error',
-      message: 'There was an error contacting the blob storage container.',
-      error: err
-    };
-    res.status(500);
-  } finally {
-    res.render(viewData.viewName, viewData);
-  }
+  };
+  res.render(viewData.viewName, viewData);
 });
 
-router.post('/', uploadStrategy, async (req, res) => {
+router.post('/upload-label-image', uploadStrategy, async (req, res) => {
   const blobName = getBlobName(req.file.originalname);
   const stream = getStream(req.file.buffer);
-  const containerClient = blobServiceClient.getContainerClient(containerName2);;
+  const containerClient = blobServiceClient.getContainerClient('label-images');;
   const blockBlobClient = containerClient.getBlockBlobClient(blobName);
 
   try {
     await blockBlobClient.uploadStream(stream,
       uploadOptions.bufferSize, uploadOptions.maxBuffers,
       { blobHTTPHeaders: { blobContentType: "image/jpeg" } });
-    res.render('success', { message: 'File uploaded to Azure Blob storage.' });
+    res.render('success', { message: 'Nutrition label uploaded to Azure Blob Storage.' });
+  } catch (err) {
+    res.render('error', { message: err.message });
+  }
+});
+
+
+router.post('/upload-food-image', uploadStrategy, async (req, res) => {
+  const blobName = getBlobName(req.file.originalname);
+  const stream = getStream(req.file.buffer);
+  const containerClient = blobServiceClient.getContainerClient('food-images');;
+  const blockBlobClient = containerClient.getBlockBlobClient(blobName);
+
+  try {
+    await blockBlobClient.uploadStream(stream,
+      uploadOptions.bufferSize, uploadOptions.maxBuffers,
+      { blobHTTPHeaders: { blobContentType: "image/jpeg" } });
+    res.render('success', { message: 'Food image uploaded to Azure Blob Storage.' });
   } catch (err) {
     res.render('error', { message: err.message });
   }

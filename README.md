@@ -1,42 +1,15 @@
----
-page_type: sample
-languages:
-- javascript
-- nodejs
-products:
-- azure
-- azure-storage
-description: "How to stream blobs to Azure Blob Storage with Node.js."
-urlFragment: stream-blobs-nodejs
----
-
-# How to stream blobs to Azure Blob Storage with Node.js
-
-## SDK Versions
-In this sample, you will find the following folders:
-
-* **v10** - references Storage Blob SDK v10
-* **v12** - references Storage Blob SDK v12
+# Nutrition Assistant Project
 
 ## Prerequisites
-If you don't have a Microsoft Azure subscription, you can get a [free account] before you begin.
-
 Clone the repository to your machine:
-
 ```bash
-git clone https://github.com/Azure-Samples/azure-sdk-for-js-storage-blob-stream-nodejs.git
+git clone https://github.com/baerdal/NutritionAssistant.git
 ```
 
-Then, switch to the appropriate folder:
+Then, switch to the nutrition_assistant folder:
 
 ```bash
-cd v10
-```
-
-or
-
-```bash
-cd v12
+cd nutrition_assistant
 ```
 
 Install dependencies via `npm`:
@@ -45,29 +18,19 @@ Install dependencies via `npm`:
 npm install
 ```
 
-## This Sample shows how to do following operations of Storage Blobs
-* Create a storage account.
-* Create a container.
-* Upload a stream to [blockblob].
+## Adding Azure Storage Account name and key
+Navigate to your storage account in the Azure and copy the account name and key (under **Settings** > **Access keys**) into the a new `.env` file. This project assumes you have one storage account with two containers `label-images` and `food-images`.
+```
+AZURE_STORAGE_ACCOUNT_NAME=
+AZURE_STORAGE_ACCOUNT_ACCESS_KEY=
+```
 
-## Adding your storage account name and key
-Navigate to your storage account in the [Azure Portal] and copy the account name and key (under **Settings** > **Access keys**) into the `.env.example` file. Save the file and then rename it from `.env.example` to `.env`.
-
-## Running the sample
+## Running Locally
 Start the server:
 
 ```bash
 npm start
 ```
 
-Navigate to [http://localhost:3000] and upload an image to blob storage.
-
-You can use the [Azure Storage Explorer] to view blob containers and verify your upload is successful.
-
-<!-- LINKS -->
-[blockblob]: https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs
-[Azure Portal]: https://portal.azure.com
-[http://localhost:3000]: http://localhost:3000
-[Azure Storage Explorer]: https://azure.microsoft.com/features/storage-explorer/
-[free account]: http://go.microsoft.com/fwlink/?LinkId=330212
+Navigate to http://localhost:3000 and upload an image to blob storage.
 
