@@ -14,6 +14,21 @@ endpoint = "https://eastus2.api.cognitive.microsoft.com/"
 computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
 
 
+def preprocess(input):        
+    nutrition_info = dict()
+    desired_fields = ['Total Carbohydrate', 'Total Fat', 'Protein', 'Calories']
+    
+    for text_result in input:
+        for i, line in enumerate(text_result.lines):
+            for desired_field in desired_fields:
+                if desired_field in line.text:         
+                    if desired_field == 'Calories':
+                        nutrition_info[desired_field] = text_result.lines[i+1].text
+                    else:
+                        nutrition_info[desired_field] = line.text.split[-1]
+    
+    return nutrition_info
+
 def perform_ocr(blob_uri):
     print("===== Read File - remote =====")
 
@@ -32,19 +47,15 @@ def perform_ocr(blob_uri):
             break
         time.sleep(1)
 
-    # Print the detected text, line by line
-    if read_result.status == OperationStatusCodes.succeeded:
-        for text_result in read_result.analyze_result.read_results:
-            for line in text_result.lines:
-                print(line.text)
-                print(line.bounding_box)
-    print()
-    '''
-    END - Read File - remote
-    '''
+    return read_result
+
 
 def main(myblob: func.InputStream):
     logging.info(f"Python blob trigger function processed blob \n"
                  f"Name: {myblob.name}\n"
                  f"Blob Size: {myblob.length} bytes")
-    perform_ocr(myblob.uri)
+    read_result = perform_ocr(myblob.uri)
+    print(read_result.analyze_result.read_results)
+    if read_result.status == OperationStatusCodes.succeeded:
+        nutrition_data = preprocess(read_result.analyze_result.read_results)
+        print(nutrition_data)
