@@ -20,9 +20,9 @@ cosmosdb_client = CosmosClient(url=os.environ["cosmosdb_endpoint"],
 
 
 def db_write(nutrition_data):
-    database = cosmosdb_client.create_database_if_not_exists(id="nutrition_data")
+    database = cosmosdb_client.create_database_if_not_exists(id="nutrition_database")
     partitionKeyPath = PartitionKey(path="/id")
-    container = database.create_container_if_not_exists(id="label-images", partition_key=partitionKeyPath)
+    container = database.create_container_if_not_exists(id="nutrition_data", partition_key=partitionKeyPath)
     container.create_item(nutrition_data)
 
 
