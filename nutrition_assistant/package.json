@@ -10,11 +10,12 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@azure/cosmos": "^3.17.1",
     "@azure/storage-blob": "^12.1.2",
     "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
     "debug": "^4.1.1",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "express": "^4.17.1",
     "hbs": "^4.1.1",
     "into-stream": "^5.1.1",
