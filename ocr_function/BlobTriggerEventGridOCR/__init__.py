@@ -1,6 +1,7 @@
 import logging
 import time
 import uuid
+import os
 
 import azure.functions as func
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
@@ -10,14 +11,12 @@ from azure.cosmos import CosmosClient, PartitionKey
 
 
 # Azure Computer Vision Authentication
-computervision_subscription_key = ""
-computervision_endpoint = "https://eastus2.api.cognitive.microsoft.com/"
-computervision_client = ComputerVisionClient(computervision_endpoint, CognitiveServicesCredentials(computervision_subscription_key))
+computervision_client = ComputerVisionClient(os.environ["computervision_endpoint"], 
+                                             CognitiveServicesCredentials(os.environ["computervision_subscription_key"]))
 
 # Azure CosmosDB Authentication
-cosmosdb_subscription_key = ""
-cosmosdb_endpoint = "https://nutrition-info.documents.azure.com:443/"
-cosmosdb_client = CosmosClient(url=cosmosdb_endpoint, credential=cosmosdb_subscription_key)
+cosmosdb_client = CosmosClient(url=os.environ["cosmosdb_endpoint"], 
+                               credential=os.environ["cosmosdb_subscription_key"])
 
 
 def db_write(nutrition_data):
