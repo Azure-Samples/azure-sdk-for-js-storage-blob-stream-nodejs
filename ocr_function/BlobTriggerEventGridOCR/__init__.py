@@ -38,7 +38,7 @@ def preprocess(input):
                         nutrition_info[desired_field] = text_result.lines[i+1].text
                     else:
                         value = line.text.split()[-1]
-                        value_no_units = value.replace('g', '').replace('mg', '')
+                        value_no_units = value.replace('mg', '').replace('g', '')
                         nutrition_info[desired_field] = value_no_units
     
     return nutrition_info
