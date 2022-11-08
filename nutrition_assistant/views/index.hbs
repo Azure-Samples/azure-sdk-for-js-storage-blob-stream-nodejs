@@ -1,40 +1,130 @@
-<h1>Nutrition Assistant</h1>
-<br>
-<h2>Upload Nutrition Label Image</h2>
-<form id="upload-form" action="/upload-label-image" method="POST" enctype="multipart/form-data">
-  <div class="upload-container"><input id="file-picker" type="file" name="image"></div>
-  <div><input type="submit" value="Upload Image"></div>
-</form>
+<center>
+  <h1>Nutrition Assistant</h1>
+  <br>
+  <div class="parent grid-parent-upload">
+    <div class="child">
+      <h2>Upload Nutrition Label Image</h2>
+      <form id="upload-form-label" action="/upload-label-image" method="POST" enctype="multipart/form-data">
+        <div class="upload-container"><input id="file-picker-label" type="file" name="image"></div>
+        <div><input type="submit" value="Upload Image"></div>
+      </form>
+      <p id="message-label">{{messageLabel}}</p>
+    </div>
+    <div class="child">
+      <h2>Upload Food Image</h2>
+      <form id="upload-form-food" action="/upload-food-image" method="POST" enctype="multipart/form-data">
+        <div class="upload-container"><input id="file-picker-food" type="file" name="image"></div>
+        <div><input type="submit" value="Upload Image"></div>
+      </form>
+      <p id="message-food">{{messageFood}}</p>
+    </div>
+  </div>
 
-<p id="message">{{message}}</p>
+  <br>
+  <hr>
+  <br>
 
-<br>
-<hr>
-<br>
+  <div class="parent grid-parent-table">
+    <div class="child">
+      <h2>Last Day</h2>
+      <table>
+        <tr>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Country</th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>Centro comercial Moctezuma</td>
+          <td>Francisco Chang</td>
+          <td>Mexico</td>
+        </tr>
+      </table>
+    </div>
+    <div class="child">
+      <h2>Last Week</h2>
+      <table>
+        <tr>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Country</th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>Centro comercial Moctezuma</td>
+          <td>Francisco Chang</td>
+          <td>Mexico</td>
+        </tr>
+      </table>
+    </div>
+    <div class="child">
+      <h2>Last Month</h2>
+      <table>
+        <tr>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Country</th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>Centro comercial Moctezuma</td>
+          <td>Francisco Chang</td>
+          <td>Mexico</td>
+        </tr>
+      </table>
+    </div>
+  </div>
 
-<h2>Upload Food Image</h2>
-<form id="upload-form" action="/upload-food-image" method="POST" enctype="multipart/form-data">
-  <div class="upload-container"><input id="file-picker" type="file" name="image"></div>
-  <div><input type="submit" value="Upload Image"></div>
-</form>
+  <br>
+  <hr>
+  <br>
 
-<br>
-<hr>
-<br>
-<p>This app has no official privacy policy. Your data will be uploaded to Azure Blob Storage. Your images will be public once you upload them and there is no automated way to remove them.</p>
+  <p>This app has no official privacy policy. Your data will be uploaded to Azure Blob Storage. Your images will be public once you upload them and there is no automated way to remove them.</p>
+</center>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const messageLabel = document.getElementById('message-label');
+    const picker = document.getElementById('file-picker-label');
+
+    document.getElementById('upload-form-label').addEventListener('submit', (e) => {
+
+      messageLabel.innerText = '';
+
+      if(!picker.files.length) {
+        messageLabel.innerText = 'Please select an image to upload.';
+        e.preventDefault();
+        return false;
+      }
+    });
+
+  });
+</script>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
 
-    const message = document.getElementById('message');
-    const picker = document.getElementById('file-picker');
+    const messageFood = document.getElementById('message-food');
+    const picker = document.getElementById('file-picker-food');
 
-    document.getElementById('upload-form').addEventListener('submit', (e) => {
+    document.getElementById('upload-form-food').addEventListener('submit', (e) => {
 
-      message.innerText = '';
+      messageFood.innerText = '';
 
       if(!picker.files.length) {
-        message.innerText = 'Please select an image to upload.';
+        messageFood.innerText = 'Please select an image to upload.';
         e.preventDefault();
         return false;
       }

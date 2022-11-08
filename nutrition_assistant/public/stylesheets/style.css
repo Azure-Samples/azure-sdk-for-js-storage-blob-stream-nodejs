@@ -7,9 +7,23 @@ a {
   color: #00B7FF;
 }
 
+table, th, td {
+  border:1px solid black;
+}
+
 .upload-container {
   border: solid 1px #ccc;
   padding: 10px;
   max-width: fit-content;
   margin-bottom: 10px
+}
+
+.grid-parent-upload {
+  display: grid;
+  grid-template-columns: 1fr 1fr
+}
+
+.grid-parent-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr
 }
