@@ -7,8 +7,8 @@ const {
   StorageSharedKeyCredential,
   newPipeline
 } = require('@azure/storage-blob');
+const { CosmosClient } = require('@azure/cosmos');
 
-// const { CosmosClient } = require('@azure/cosmos');
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
@@ -28,10 +28,10 @@ const blobServiceClient = new BlobServiceClient(
   pipeline
 );
 
-// const cosmosClient = new CosmosClient({
-//   endpoint: process.env.COSMOS_ENDPOINT,
-//   key: process.env.COSMOS_KEY
-// });
+const cosmosClient = new CosmosClient({
+  endpoint: process.env.COSMOS_ENDPOINT,
+  key: process.env.COSMOS_KEY
+});
 
 const getBlobName = originalName => {
   // Use a random number to generate a unique file name, 
@@ -63,30 +63,10 @@ router.post('/upload-label-image', uploadStrategy, async (req, res) => {
   } catch (err) {
     res.render('error', { message: err.message });
   }
+});
 
-  // // Create database if it doesn't exist
-  // const { database } = await cosmosClient.databases.createIfNotExists({id:'nutrition_database'});
-  // console.log(`${database.id} database ready`);
-
-  // // Create container if it doesn't exist
-  // const { container } = await database.containers.createIfNotExists({
-  //   id: 'nutrition_data',
-  //   partitionKey: {
-  //       paths: ["/id"]
-  //   }
-  // });
-  // console.log(`${container.id} container ready`);
-
-  // const querySpec = {
-  //   query: "select * from nutrition_data",
-  // };
-
-  // // Get items 
-  // const { resources } = await container.items.query(querySpec).fetchAll();
-  // for (const item of resources) {
-  //   console.log(`${item.id}`);
-  // }
-
+router.post('/fetch-nutrition-data', (req, res) => {
+  console.log(req.params);
 });
 
 
