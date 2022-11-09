@@ -31,14 +31,14 @@
 
 <h2>Macronutrient Analysis</h2>
 <br>
-<form id="get-data" action="/fetch-nutrition-data" method="POST" enctype="multipart/form-data">
-  <div>
-  <input id="reportrange" type="text" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 50%"> <i class="fa fa-calendar"></i>&nbsp; <span></span> <i class="fa fa-caret-down"></i>
-  </div >
+<form id="get-data" action="/fetch-nutrition-data" method="POST" enctype="application/x-www-form-urlencoded">
+  <div class = "upload-date">
+  <input id="reportrange" name="dates" type="text" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 50%"> <i class="fa fa-calendar"></i>&nbsp; <span></span> <i class="fa fa-caret-down"></i>
+  </div>
 </form>
 
 <br>
-<button form="get-data" type="submit">Fetch nutrition data</button>
+<div><input type="submit" value="Fetch Data" form="get-data"></div>
 
 <script type="text/javascript">
 $(function() {
